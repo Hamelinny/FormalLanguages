@@ -20,6 +20,9 @@ import exceptions.NoSuchLexemeException;
 %{
 %}
 
+//Java specification from https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10
+//:
+
 EOL = \x0D | \x0A | \x0D\x0A
 Space = {EOL} | \x20 | \x09 | \x0C
 NotEOL = [^\x0D\x0A]

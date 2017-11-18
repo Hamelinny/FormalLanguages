@@ -14,6 +14,18 @@ public abstract class Lexeme {
     public abstract String name();
     public abstract String additional();
 
+    public int getLine() {
+        return line;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(name())

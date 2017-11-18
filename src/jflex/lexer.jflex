@@ -105,10 +105,12 @@ false { return new LiteralBool(yyline, yycolumn, yycolumn + yytext().length(), F
 
 "||" { return new Operator(yyline, yycolumn, yycolumn + yytext().length(), OR); }
 
+":=" { return new Operator(yyline, yycolumn, yycolumn + yytext().length(), ASSIGN); }
+
 {Commentary} { return new Commentary(yyline, yycolumn, yycolumn + yytext().length()); }
 
 {Float} { return new LiteralFloat(yyline, yycolumn, yycolumn + yytext().length(), Double.parseDouble(yytext().replace("_", ""))); }
 
 {Identifier} { return new Identifier(yyline, yycolumn, yycolumn + yytext().length(), yytext()); }
 
-[^] {throw new NoSuchLexemeException(); }
+[^] {throw new NoSuchLexemeException(yyline, yycolumn); }

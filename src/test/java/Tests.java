@@ -175,4 +175,12 @@ public class Tests {
         assertEquals(ans, streamToString(stream));
     }
 
+    @Test(expected = NoSuchLexemeException.class)
+    public void testException() {
+        String s = "=,";
+        StringReader reader = new StringReader(s);
+        LexStream stream = new LexStream(reader);
+        Main.print(stream);
+    }
+
 }

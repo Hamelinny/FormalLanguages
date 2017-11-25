@@ -174,5 +174,15 @@ public class Tests {
                 "IDENT(0, 90, 94, writ)\n";
         assertEquals(ans, streamToString(stream));
     }
+    
+    @Test
+    public void NumberIdent() {
+        String s = "123abc";
+        StringReader reader = new StringReader(s);
+        LexStream stream = new LexStream(reader);
+        String ans = "FLOAT(0, 0, 3, 123.0)\n" +
+                "IDENT(0, 3, 6, abc)\n";
+        assertEquals(ans, streamToString(stream));
+    }
 
 }

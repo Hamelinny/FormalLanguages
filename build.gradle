@@ -1,0 +1,35 @@
+group 'parser'
+version '1.0'
+
+apply plugin: 'antlr'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+generateGrammarSource {
+    maxHeapSize = "64m"
+    arguments += ['-package', 'parser', '-visitor']
+    outputDirectory = new File("$buildDir/generated-src/antlr/parser")
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile "org.antlr:antlr4-runtime:4.7"
+    antlr "org.antlr:antlr4:4.7"
+}
+
+compileJava.dependsOn generateGrammarSource
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

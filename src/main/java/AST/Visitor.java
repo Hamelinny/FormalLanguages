@@ -41,12 +41,22 @@ public class Visitor extends LBaseVisitor<String> {
         return s + " " + nm;
     }
 
+    @Override public String visitProgram(LParser.ProgramContext ctx) {
+        String info = "";
+        String name = buildName("program", "");
+        info += name;
+        info += buildInfo(ctx);
+        for (ParseTree child : ctx.children) {
+            info += name;
+            info += visit(child);
+        }
+        return info;
+    }
+
     @Override public String visitBlock(LParser.BlockContext ctx) {
         String info = "";
         String name = buildName("block", block++);
-        if (ctx.getParent() != null) {
-            info += " -> " + name + "\n";
-        }
+        info += " -> " + name + "\n";
         info += name;
         info += buildInfo(ctx);
         for (ParseTree child : ctx.statement()) {
@@ -94,15 +104,6 @@ public class Visitor extends LBaseVisitor<String> {
         info += visit(ctx.parameters());
         info += name;
         info += visit(ctx.blockNBraces());
-        return info;
-    }
-
-    @Override public String visitVariable(LParser.VariableContext ctx) {
-        String info = "";
-        String name = buildName("var ", ctx.Identifier().getText());
-        info += " -> " + name + "\n";
-        info += name;
-        info += buildInfo(ctx);
         return info;
     }
 
@@ -193,7 +194,7 @@ public class Visitor extends LBaseVisitor<String> {
         return info;
     }
 
-    @Override public String visitUnaryMinusExpression(LParser.UnaryMinusExpressionContext ctx) {
+    @Override public String visitMinusExpression(LParser.MinusExpressionContext ctx) {
         String info = "";
         String name = buildName("expression", expression++);
         info += " -> " + name + "\n";

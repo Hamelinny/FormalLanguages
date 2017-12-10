@@ -15,6 +15,18 @@ public class LBaseListener implements LListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterProgram(LParser.ProgramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProgram(LParser.ProgramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBlock(LParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -58,18 +70,6 @@ public class LBaseListener implements LListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFunction(LParser.FunctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterVariable(LParser.VariableContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVariable(LParser.VariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -159,13 +159,13 @@ public class LBaseListener implements LListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnaryMinusExpression(LParser.UnaryMinusExpressionContext ctx) { }
+	@Override public void enterMinusExpression(LParser.MinusExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnaryMinusExpression(LParser.UnaryMinusExpressionContext ctx) { }
+	@Override public void exitMinusExpression(LParser.MinusExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

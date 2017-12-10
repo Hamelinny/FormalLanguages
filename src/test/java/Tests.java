@@ -26,8 +26,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -44,8 +44,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -62,8 +62,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -80,8 +80,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -98,8 +98,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -116,8 +116,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -134,8 +134,8 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 
     @Test
@@ -152,7 +152,7 @@ public class Tests {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
-        System.out.println(visitor.visitBlock(t));
+        LParser.ProgramContext t = parser.program();
+        System.out.println(visitor.visitProgram(t));
     }
 }

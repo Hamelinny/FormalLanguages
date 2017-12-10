@@ -1,5 +1,9 @@
 grammar L;
 
+program
+    : function* block
+    ;
+
 block
     : statement*
     ;
@@ -9,8 +13,7 @@ blockNBraces
     ;
 
 statement
-    : function
-    | expression
+    : expression
     | ifStatement
     | whileStatement
     | writeStatement

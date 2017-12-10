@@ -7,6 +7,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface LListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link LParser#program}.
+	 * @param ctx the parse tree
+	 */
+	void enterProgram(LParser.ProgramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LParser#program}.
+	 * @param ctx the parse tree
+	 */
+	void exitProgram(LParser.ProgramContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LParser#block}.
 	 * @param ctx the parse tree
 	 */
@@ -46,16 +56,6 @@ public interface LListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFunction(LParser.FunctionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LParser#variable}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariable(LParser.VariableContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LParser#variable}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariable(LParser.VariableContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LParser#parameters}.
 	 * @param ctx the parse tree
@@ -127,17 +127,17 @@ public interface LListener extends ParseTreeListener {
 	 */
 	void exitWriteStatement(LParser.WriteStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code unaryMinusExpression}
+	 * Enter a parse tree produced by the {@code minusExpression}
 	 * labeled alternative in {@link LParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterUnaryMinusExpression(LParser.UnaryMinusExpressionContext ctx);
+	void enterMinusExpression(LParser.MinusExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code unaryMinusExpression}
+	 * Exit a parse tree produced by the {@code minusExpression}
 	 * labeled alternative in {@link LParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitUnaryMinusExpression(LParser.UnaryMinusExpressionContext ctx);
+	void exitMinusExpression(LParser.MinusExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code identifierExpression}
 	 * labeled alternative in {@link LParser#expression}.

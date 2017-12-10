@@ -10,6 +10,12 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface LVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by {@link LParser#program}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProgram(LParser.ProgramContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link LParser#block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -33,12 +39,6 @@ public interface LVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFunction(LParser.FunctionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link LParser#variable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariable(LParser.VariableContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link LParser#parameters}.
 	 * @param ctx the parse tree
@@ -82,12 +82,12 @@ public interface LVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWriteStatement(LParser.WriteStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code unaryMinusExpression}
+	 * Visit a parse tree produced by the {@code minusExpression}
 	 * labeled alternative in {@link LParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitUnaryMinusExpression(LParser.UnaryMinusExpressionContext ctx);
+	T visitMinusExpression(LParser.MinusExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code identifierExpression}
 	 * labeled alternative in {@link LParser#expression}.

@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
 public class Tests {
     @Test
     public void simpleExpression() {
-        String s = "a + b";
+        String s = "a + b;";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -32,7 +32,7 @@ public class Tests {
 
     @Test
     public void functionDefinition() {
-        String s = "fun sum(a, b) {return a + b}";
+        String s = "fun sum(a, b) {return a + b;}";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -50,7 +50,7 @@ public class Tests {
 
     @Test
     public void ifTest() {
-        String s = "if (a < b) {a := b} if (a < b) {a := b} else {b := a}";
+        String s = "if (a < b) {a := b;}; if (a < b) {a := b;} else {b := a;};";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -68,7 +68,7 @@ public class Tests {
 
     @Test
     public void whileTest() {
-        String s = "while (a < b) {b := b % a}";
+        String s = "while (a < b) {b := b % a;};";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -86,7 +86,7 @@ public class Tests {
 
     @Test
     public void readWriteTest() {
-        String s = "write(2*3+7) read(a)";
+        String s = "write(2*3+7); read(a);";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -104,7 +104,7 @@ public class Tests {
 
     @Test
     public void functionCallTest() {
-        String s = "c = sum(a, b)";
+        String s = "c := sum(a, b);";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -122,7 +122,7 @@ public class Tests {
 
     @Test
     public void operatorsTest() {
-        String s = "(5 * a) - b % c x <= y x >= y x < y x > y x && y x || y";
+        String s = "(5 * a) - b % c; x <= y; x >= y; x < y; x > y; x && y; x || y;";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {
@@ -140,7 +140,7 @@ public class Tests {
 
     @Test
     public void unaryMinus() {
-        String s = "-(x*y)";
+        String s = "-(x*y);";
         InputStreamReader input = new InputStreamReader(new ByteArrayInputStream(s.getBytes()));
         CharStream inp = null;
         try {

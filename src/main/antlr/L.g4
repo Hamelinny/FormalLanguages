@@ -5,7 +5,7 @@ program
     ;
 
 block
-    : statement*
+    : (statement';')*
     ;
 
 blockNBraces

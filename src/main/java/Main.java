@@ -29,9 +29,9 @@ public class Main {
         TokenStream tokens = new CommonTokenStream(lexer);
         LParser parser = new LParser(tokens);
         Visitor visitor = new Visitor();
-        LParser.BlockContext t = parser.block();
+        LParser.ProgramContext t = parser.program();
         System.out.println();
-        System.out.println(visitor.visitBlock(t));
+        System.out.println(visitor.visitProgram(t));
 
     }
 
